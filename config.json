@@ -1,0 +1,26 @@
+{
+	"data": {
+		"train_dir": "/Users/masha/Data/Train",
+                "model_dir": "/Users/masha/Data/Model",
+		"train_portion": 0.5,
+                "test_portion": 0.25
+	},
+	"training": {
+		"nb_epochs": 200,
+                "nb_cycles": 20,
+		"batch_size": 64,
+                "nb_class": 2,
+                "max_length": 100,
+                "training_portion": 0.8,
+                "lrate_max": 0.001,
+                "dropout": 0.2,
+                "max_length": 100,
+                "nb_hiddens": 64,
+                "by_sentence": false,
+                "activation": "sigmoid",
+                "loss": "binary_crossentropy",
+                "metrics": "accuracy",
+                "optimizer": "adam"
+                
+	}
+}

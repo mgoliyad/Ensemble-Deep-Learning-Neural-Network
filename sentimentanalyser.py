@@ -37,20 +37,16 @@ def main():
     train_vec= data.get_vectors(train_docs)
     val_vec = data.get_vectors(val_docs)
     predictions = []
+    
     model = Model(nlp, configs, predictions, val_vec)
-    
-    
     model.train_model(train_vec,train_labels,val_vec,val_labels)
     
     predictions = np.array(predictions)
-    
     ensemble_prediction = model.model_evaluation(val_labels)
-    
     val_labels = np.argmax(val_labels, axis=1)
     
     print('We got ', np.sum(ensemble_prediction != val_labels), 'out of ', val_labels.shape[0], 'misclassified texts')
     print('Here is the list of misclassified texts:\n')
-    
     
     val_texts = np.array(val_texts).reshape(-1)
     
